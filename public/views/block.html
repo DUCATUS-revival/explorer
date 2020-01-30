@@ -1,8 +1,8 @@
 <!-- BEGIN PAGE CONTENT-->
 <div class="row">
-  <div class="col-md-12 portlet light">
+  <div class="col-md-12 portlet">
     <div class="portlet-body">
-      <table class="col-md-6 table table-hover">
+      <table class="col-md-6 table duc-table">
         <tr >
           <td width="25%">Block Height</td>
           <td><a class="btn btn-info" ng-show="block.number > 0 && blockNum == block.number" href="/block/{{block.number - 1}}">&lt;Prev</a> {{block.number | number}} <a class="btn btn-info" ng-show="blockNum == block.number" href="/block/{{block.number + 1}}">Next&gt;</a></td>
@@ -44,9 +44,9 @@
     <!--TODO: calculate block reward -->
   </div>
   <!-- Begin: Transaction Datatable -->
-  <div class="portlet light portlet-datatable col-md-12">
+  <div class="portlet portlet-datatable col-md-12">
     <div class="portlet-body">
-      <table class="table table-condensed">
+      <table class="table duc-table">
         <thead ng-show="block.transactions.length > 0">
           <tr>
             <th> Transactions </th>
