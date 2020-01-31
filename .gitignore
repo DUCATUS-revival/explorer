@@ -41,3 +41,6 @@ data/
 config.json
 .node-xmlhttprequest-*
 /nbproject/private/
+
+
+.history

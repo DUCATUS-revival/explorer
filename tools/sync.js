@@ -339,6 +339,7 @@ const writeTransactionsToDB = async (config, blockData, flush) => {
 **/
 const listenBlocks = function (config) {
   const newBlocks = web3.eth.subscribe('newBlockHeaders', (error, result) => {
+    console.log('listenBlocks',result);
     if (!error) {
       return;
     }
@@ -459,6 +460,8 @@ const prepareSync = async (config, callback) => {
   Block Patcher(experimental)
 **/
 const runPatcher = async (config, startBlock, endBlock) => {
+
+  console.log('start runPatcher');
   if (!web3 || !web3.eth.net.isListening()) {
     console.log('Error: Web3 is not connected. Retrying connection shortly...');
     setTimeout(() => { runPatcher(config); }, 3000);
@@ -467,6 +470,7 @@ const runPatcher = async (config, startBlock, endBlock) => {
 
   if (typeof startBlock === 'undefined' || typeof endBlock === 'undefined') {
     // get the last saved block
+    console.log('error');
     const blockFind = Block.find({}, 'number').lean(true).sort('-number').limit(1);
     blockFind.exec(async (err, docs) => {
       if (err || !docs || docs.length < 1) {

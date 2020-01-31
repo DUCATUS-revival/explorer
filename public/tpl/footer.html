@@ -1,50 +1,66 @@
 <!-- BEGIN PRE-FOOTER -->
-<div class="page-prefooter">
+<footer class="footer">
   <div class="container">
-    <div class="row">
-      <div class="col-md-3 col-sm-6 col-xs-12 footer-block">
-        <h2>About</h2>
-        <p> {{settings.about}} </p>
-        <span ng-bind-html="settings.poweredbyCustom" ng-if="settings.poweredbyCustom">{{settings.poweredbyCustom}}</span>
-        <span ng-if="!settings.poweredbyCustom && settings.poweredbyEtcImage"><a href="https://github.com/ethereumclassic/explorer" target="_blank"><img height="51px" src="{{settings.poweredbyEtcImage}}"></a></span>
-        <p ng-if="!settings.poweredbyCustom && !settings.poweredbyEtcImage && settings.poweredbyEtc"> Powered by <a href="https://github.com/ethereumclassic/explorer" target="_blank">ETC Explorer</a> </p>
+    <div class="section-footer">
+      <div class="footer-left">
+        <div class="footer-logo"></div>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/WeAreDucatus/" target="_blank" class="icon icon__facebook"></a>
+          <a href="https://twitter.com/DucatusGlobal" target="_blank" class="icon icon__twitter"></a>
+          <a href="https://instagram.com/ducatusglobal" target="_blank" class="icon icon__instagram"></a>
+          <a href="https://www.linkedin.com/company/ducatus-global" target="_blank" class="icon icon__linkedin"></a>
+          <a href="https://www.youtube.com/channel/UCBjE5LLJQyMq6crQholohTQ" target="_blank" class="icon icon__youtube"></a>
+        </div>
       </div>
-      <div class="col-md-3 col-sm-6 col-xs-12 footer-block">
-        <h2>Follow Us On</h2>
-        <ul class="social-icons">
-          <li>
-            <a ng-show="settings.rss" href="{{settings.rss}}" data-original-title="rss" class="rss"></a>
-          </li>
-          <li>
-            <a ng-show="settings.reddit" href="{{settings.reddit}}" data-original-title="reddit" class="reddit"></a>
-          </li>
-          <li>
-            <a ng-show="settings.twitter" href="{{settings.twitter}}" data-original-title="twitter" class="twitter"></a>
-          </li>
-          <li>
-            <a ng-show="settings.github" href="{{settings.github}}" data-original-title="github" class="github"></a>
-          </li>
-          <li>
-            <a ng-show="settings.linkedin" href="{{settings.linkedin}}" data-original-title="linkedin" class="linkedin"></a>
-          </li>
-        </ul>
-      </div>
-      <div ng-show="settings.symbol == 'ETC'" class="col-md-6 col-sm-12 col-xs-12 footer-block">
-        <h2>Help, it's Broken!</h2>
-        <address class="margin-bottom-40">
-          <br>Open an Issue: <a href="https://github.com/ethereumclassic/explorer/issues">github</a>
-          <br> <a href="mailto:elaine.ou@gmail.com">Email bug reports</a>
-          <br> <a href="https://twitter.com/eiaine">Twit</a>
-        </address>
+      <div class="footer-right">
+        <div class="footer-menu" data-title="About">
+          <a class="footer-menu-link" href="/about.html" target="_blank">About Ducatus</a>
+          <a class="footer-menu-link" href="/contact.html" target="_blank">Contact</a>
+        </div>
+        <div class="footer-menu-same">
+          <div class="footer-menu" data-title="Ducatus Lifestyle">
+            <a class="footer-menu-link footer-menu-link-disable" data-unactive="coming soon" target="_blank">Ducatus Academy</a>
+            <a class="footer-menu-link footer-menu-link-disable" data-unactive="coming soon" target="_blank">Ducatus Cafe</a>
+            <a class="footer-menu-link footer-menu-link-disable" data-unactive="coming soon" target="_blank">Ducatus Charity</a>
+          </div>
+          <div class="footer-menu" data-title="Ducatus Lifestyle">
+            <a class="footer-menu-link footer-menu-link-disable" data-unactive="coming soon" target="_blank">Ducatus Health</a>
+            <a class="footer-menu-link footer-menu-link-disable" data-unactive="coming soon" target="_blank">Ducatus Property</a>
+            <a class="footer-menu-link footer-menu-link-disable" data-unactive="coming soon" target="_blank">Ducatus Travel</a>
+          </div>
+        </div>
+        
+        <div class="footer-menu" data-title="Ducatus Biz">
+          <a class="footer-menu-link" target="_blank" href="https://staydmob.com/">D-MOB</a class="footer-menu-link">
+          <a class="footer-menu-link footer-menu-link-disable" target="_blank" data-unactive="coming soon">Ducatus Merchants</a>
+          <a class="footer-menu-link footer-menu-link-disable" target="_blank" data-unactive="coming soon">Ducatus Coins</a>
+        </div>
       </div>
     </div>
+    <div class="section-copyright">
+      <span class="p__copyrights">© 2020 Ducatus | <a href="/imprint.html" target="_blank" rel="noopener noreferrer">Impressum</a> | <a href="/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a></span>
+    </div>
   </div>
-</div>
+</footer>
+
+<script>
+  $('.footer-menu').click((e) => {
+    if (e.toElement.classList.contains('footer-menu')) {
+      if (e.toElement.parentElement.classList.contains('footer-menu-same') && !e.toElement.parentElement.classList.contains('footer-menu-same-open')) {
+        e.toElement.parentElement.classList.add('footer-menu-same-open');
+      } else if (e.toElement.parentElement.classList.contains('footer-menu-same') && e.toElement.parentElement.classList.contains('footer-menu-same-open')) {
+        e.toElement.parentElement.classList.remove('footer-menu-same-open');
+      }
+      if (e.toElement.classList.contains('footer-menu-open')) {
+        e.toElement.classList.remove('footer-menu-open');
+      } else {
+        e.toElement.classList.add('footer-menu-open');
+      }
+    }
+  });
+</script>
 <!-- END PRE-FOOTER -->
 <!-- BEGIN POST-FOOTER -->
-<div class="page-footer">
-  <div class="container" ng-bind-html="settings.copyright"></div>
-</div>
 <div class="scroll-to-top">
   <i class="icon-arrow-up"></i>
 </div>

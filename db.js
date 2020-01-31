@@ -103,6 +103,14 @@ const BlockStat = new Schema(
   }, { collection: 'BlockStat' },
 );
 
+mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost/explorerDB', {
+  useMongoClient: true,
+  poolSize: 5,
+  // rs_name: 'myReplicaSetName',
+  user: 'explorer',
+  pass: 'lamiqv',
+});
+
 const Market = new Schema(
   {
     'symbol': String,
