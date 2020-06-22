@@ -10,7 +10,7 @@ Follow the project progress at: [ETC Block Explorer Development](https://github.
 
 Clone the repo
 
-`git clone https://github.com/ethereumclassic/explorer`
+`git clone https://github.com/DUCATUS-revival/explorer.git`
 
 Download [Nodejs and npm](https://docs.npmjs.com/getting-started/installing-node "Nodejs install") if you don't have them
 

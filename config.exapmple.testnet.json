@@ -1,0 +1,37 @@
+{
+    "nodeAddr":     "89.40.14.180",
+    "wsPort":       8455,
+    "startBlock":   0,
+    "endBlock":     "latest",
+    "quiet":        true,
+    "syncAll":      true,
+    "patch":        true,
+    "patchBlocks":  1,
+    "bulkSize":     1,
+    "settings": {
+        "symbol": "DUCX",
+        "name": "DucatusX",
+        "title": "DucatusX Block Explorer",
+        "author": "",
+        "contact": "mailto:",
+        "about": "This is an open source Blockchain Explorer.",
+        "rss": "",
+        "reddit": "",
+        "twitter": "",
+        "linkedin": "",
+        "github": "https://github.com/DUCATUS-revival/parity-ethereum",
+        "logo": "/img/logo.svg",
+        "copyright": "2019",
+        "poweredbyCustom": false,
+        "poweredbyEtcImage": "/img/powered-by-etcexplorer-w.png",
+        "poweredbyEtc": true,
+        "tokenList": "tokens.json",
+        "useRichList": true,
+        "useFiat": true,
+        "miners": {
+            "0x00ede40cc05b611d09ce16853a462fcc04a15d93": "180 miner",
+            "0x00978b65af5bfc791b5def1700677ed9c64fd816": "99 miner"
+         }
+    }
+}
+

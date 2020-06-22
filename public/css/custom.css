@@ -6,9 +6,6 @@ img.logo-default {
   height: 60px;
   margin-top: 15px;
 }
-.create {
-  background-color: #36c6d3;
-}
 .truncate-txhash,
 .truncate-addrhash {
   white-space: nowrap;
