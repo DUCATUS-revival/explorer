@@ -4,7 +4,7 @@
     <!-- BEGIN LOGO -->
     <div class="page-logo">
       <a href="/">
-      <img ng-show="settings.logo" src="{{settings.logo}}" alt="logo" class="logo-default" />
+        <img ng-show="settings.logo" src="{{settings.logo}}" alt="logo" class="logo-default" />
       </a>
     </div>
     <!-- END LOGO -->
@@ -17,11 +17,13 @@
         <li class="dropdown">
           <form name="form.searchForm" class="search-form">
             <div class="input-group">
-              <input type="text" name="explorerSearch" class="form-control" placeholder="Search by Address / Txhash / BlockNum / BlockHash" ng-model="form.searchInput" ng-keyup="$event.keyCode == 13 ? searchQuery(form.searchInput) : null">
+              <input type="text" name="explorerSearch" class="form-control"
+                placeholder="Search by Address / Txhash / BlockNum / BlockHash" ng-model="form.searchInput"
+                ng-keyup="$event.keyCode == 13 ? searchQuery(form.searchInput) : null">
               <span class="input-group-btn">
-              <a class="btn" ng-click="searchQuery(form.searchInput)">
-              <i class="icon-magnifier"></i>
-              </a>
+                <a class="btn" ng-click="searchQuery(form.searchInput)">
+                  <i class="icon-magnifier"></i>
+                </a>
               </span>
             </div>
           </form>
@@ -38,13 +40,13 @@
     <!-- BEGIN MEGA MENU -->
     <div class="hor-menu hor-menu-light">
       <ul class="nav navbar-nav">
-        <li class="active">
-          <a href="/">Home</a>
+        <li ng-class="{ active: isActive('/home') }">
+          <a href="/home">Home</a>
         </li>
-        <li ng-show="settings.useRichList">
+        <li ng-show="settings.useRichList" ng-class="{ active: isActive('/accounts') }">
           <a href="/accounts">Accounts</a>
         </li>
-        <li>
+        <li ng-class="{ active: isActive('/token') }">
           <a href="/token">Tokens</a>
         </li>
         <!-- <li class="menu-dropdown mega-menu-dropdown ">
