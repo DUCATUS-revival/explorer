@@ -173,3 +173,17 @@ li.ng-scope {
 .mini-logo {
   height: 1.2em;
 }
+
+.brown-button-duc {
+  background-color: #892734 !important;
+  border-color: transparent !important;
+  color: #fff !important;
+  border-radius: 5px !important;
+}
+
+.g-color-text {
+  color: #666 !important;
+}
+.brown-color-text {
+  color: #892734 !important;
+}

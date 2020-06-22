@@ -15,8 +15,8 @@
               {{ token.total_supply | number:1 }}
               <span class="eth-stat-text">Total {{ token.symbol }} Tokens</span>
             </div>
-            {{ token.total_holders | number:1 }}
             <div class="margin-top-20">
+              {{ token.total_holders | number:1 }}
               <span class="eth-stat-text">Token Holders</span>
             </div>
             <div class="margin-top-20">
@@ -27,15 +27,19 @@
         <div class="col-md-6 center">
           <div>
             <span class="eth-stat-text">Contract Creator</span><br />
-            <a href="/addr/{{token.owner}}">{{token.owner.substr(0,24)}}...</a>
+            <a class="brown-color-text" href="/addr/{{token.owner}}"
+              >{{token.owner.substr(0,24)}}...</a
+            >
             at txn
-            <a href="/tx/{{token.creationTransaction}}"
+            <a class="brown-color-text" href="/tx/{{token.creationTransaction}}"
               >{{token.creationTransaction.substr(0,24)}}...</a
             >
           </div>
           <div class="margin-top-20">
             <span class="eth-stat-text">Contract Address</span><br />
-            <a href="/addr/{{token.address}}">{{token.address}}</a>
+            <a class="g-color-text" href="/addr/{{token.address}}"
+              >{{token.address}}</a
+            >
           </div>
         </div>
       </div>
@@ -95,7 +99,7 @@
                   />
                   <span class="input-group-btn">
                     <button
-                      class="btn blue-madison"
+                      class="btn blue-madison brown-button-duc"
                       type="button"
                       ng-click="getBalance(form.addrInput)"
                     >
@@ -167,12 +171,16 @@
               </table>
               <ul class="pager">
                 <li class="previous">
-                  <a ng-click="getTransferTokens(transfer_tokens[0]._id)">
+                  <a
+                    class="brown-button-duc"
+                    ng-click="getTransferTokens(transfer_tokens[0]._id)"
+                  >
                     ← Newer
                   </a>
                 </li>
                 <li class="next">
                   <a
+                    class="brown-button-duc"
                     ng-click="getTransferTokens(transfer_tokens[transfer_tokens.length-1]._id)"
                   >
                     Older →
