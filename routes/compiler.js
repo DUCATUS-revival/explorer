@@ -48,11 +48,10 @@ var compileSolc = async (req, res) => {
 
       solc.loadRemoteVersion(version, (err, solcV) => {
         if (err) {
-          console.error(err);
           res.write(JSON.stringify({ 'valid': false }));
           res.end();
         } else {
-          const output = solcV.compile(input, optimise);
+          const output = solcV.compile(input/*, optimise*/);
           testValidCode(output, data, bytecode, res);
         }
       });
